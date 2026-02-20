@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sell a Cow – CattleDirect</title>
+    <meta name="description" content="List your cow on CattleDirect for free. Reach buyers directly across Ethiopia." />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <!-- ══════════════ HEADER ══════════════ -->
+    <header>
+        <div class="header-inner container">
+            <div class="logo">
+                <div class="logo-icon">🐄</div>
+                <div class="logo-text">
+                    <h1>CattleDirect</h1>
+                    <p>No brokers. No middlemen.</p>
+                </div>
+            </div>
+            <nav>
+                <a href="index.html">🏠 Browse Listings</a>
+                <a href="sell.html" class="nav-cta">+ Sell a Cow</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ══════════════ SELL PAGE ══════════════ -->
+    <main class="sell-page">
+        <div class="container">
+            <div class="sell-card">
+
+                <div class="sell-card-header">
+                    <h2>🐄 List Your Cow for Sale</h2>
+                    <p>Fill in the details below. Buyers will contact you directly — no broker fees.</p>
+                </div>
+
+                <div class="sell-card-body">
+                    <form id="sellForm" novalidate>
+
+                        <!-- Seller Info -->
+                        <p class="form-section-title">👤 Seller Information</p>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="sellerName">Full Name <span class="required">*</span></label>
+                                <input type="text" id="sellerName" name="seller_name" placeholder="e.g. Abebe Bekele"
+                                    autocomplete="name" />
+                                <span class="field-error" id="errSellerName"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" placeholder="e.g. 0911223344"
+                                    autocomplete="tel" />
+                                <span class="field-error" id="errPhone"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location (City / Region) <span class="required">*</span></label>
+                            <input type="text" id="location" name="location" placeholder="e.g. Addis Ababa, Oromia"
+                                autocomplete="address-level2" />
+                            <span class="field-error" id="errLocation"></span>
+                        </div>
+
+                        <!-- Cow Details -->
+                        <p class="form-section-title">🐂 Cow Details</p>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="breed">Breed <span class="required">*</span></label>
+                                <select id="breed" name="breed">
+                                    <option value="">Select breed…</option>
+                                    <option>Boran</option>
+                                    <option>Horro</option>
+                                    <option>Arsi</option>
+                                    <option>Fogera</option>
+                                    <option>Begait</option>
+                                    <option>Somali</option>
+                                    <option>Holstein</option>
+                                    <option>Jersey</option>
+                                    <option>Zebu</option>
+                                    <option>Mixed</option>
+                                </select>
+                                <span class="field-error" id="errBreed"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="age">Age (years) <span class="required">*</span></label>
+                                <input type="number" id="age" name="age" placeholder="e.g. 3" min="0.1" step="0.1" />
+                                <span class="field-error" id="errAge"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="weight">Weight (kg) <span class="required">*</span></label>
+                                <input type="number" id="weight" name="weight" placeholder="e.g. 250" min="1" />
+                                <span class="field-error" id="errWeight"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="price">Asking Price (ETB) <span class="required">*</span></label>
+                                <input type="number" id="price" name="price" placeholder="e.g. 35000" min="1" />
+                                <span class="field-error" id="errPrice"></span>
+                            </div>
+                        </div>
+
+                        <!-- Image Upload -->
+                        <p class="form-section-title">📷 Cow Photo</p>
+                        <div class="form-group">
+                            <label>Upload Image <span class="required">*</span></label>
+                            <div class="image-upload-area" id="uploadArea">
+                                <input type="file" id="cowImage" name="cow_image"
+                                    accept="image/jpeg,image/png,image/gif,image/webp" />
+                                <div class="upload-icon">📸</div>
+                                <p class="upload-label">Click or drag & drop an image here</p>
+                                <p class="upload-hint">JPG, PNG, GIF, WEBP — max 5 MB</p>
+                            </div>
+                            <div class="image-preview" id="imagePreview">
+                                <img id="previewImg" src="" alt="Preview" />
+                            </div>
+                            <span class="field-error" id="errImage"></span>
+                        </div>
+
+                        <!-- Submit -->
+                        <button type="submit" class="btn-submit" id="submitBtn">
+                            🚀 Publish Listing
+                        </button>
+
+                        <!-- Alerts -->
+                        <div id="alertBox" class="hidden"></div>
+
+                    </form>
+                </div><!-- /.sell-card-body -->
+            </div><!-- /.sell-card -->
+        </div>
+    </main>
+
+    <!-- ══════════════ FOOTER ══════════════ -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <h3>🐄 CattleDirect</h3>
+                <p>Ethiopia's open cattle marketplace. Empowering farmers by removing unnecessary intermediaries.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Browse Cattle</a></li>
+                    <li><a href="sell.html">List Your Cow</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">Safety Tips</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <span>© 2026 CattleDirect. All rights reserved.</span>
+            <span>Built for Ethiopian farmers — free to use.</span>
+        </div>
+    </footer>
+
+    <script src="js/sell.js"></script>
+</body>
+
+</html>
